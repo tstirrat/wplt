@@ -9,8 +9,10 @@ professions = [
     'Cooking',
     'Enchanting',
     'Engineering',
+    'Inscription',
     'Jewelcrafting',
     'Leatherworking',
+    'Mining',
     'Tailoring']
 
 # Fetch server list
@@ -35,9 +37,9 @@ class UserInputForm(FlaskForm):
         validators=[InputRequired(),
                     NumberRange(min=1, max=374)])
     targetSkill = IntegerField(u'Target skill',
-        default=375,
+        default=450,
         validators=[InputRequired(),
-                    NumberRange(min=2, max=375)])
+                    NumberRange(min=2, max=450)])
     phase = SelectField(u'Phase',
         default='1',
         choices=[('1', '1'), ('2', '2'), ('3', '3'), ('4', '4'), ('5', '5')])

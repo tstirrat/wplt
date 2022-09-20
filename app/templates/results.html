@@ -11,7 +11,7 @@
                 <th align="right">To</th>
                 <th align="left">Amount</th>
                 <th align="left">Recipe</th>
-                <th align="right">á</th>
+                <th align="right">Cost</th>
             </tr>
             {% if (form.profession.data == "Enchanting") and (form.startSkill.data < 60) %}
                 <tr>
@@ -25,11 +25,9 @@
                 <td align=right>{{ data["Start"] }}</td>
                 <td align=right>{{ data["Start"] + data["Count"] }}</td>
                 <td align=right>{{ data["Count"] }}</td>
-                {% if form.profession.data == "Enchanting" %}
-                <td align=left><a href="https://tbc.wowhead.com/spell={{ allRecipes[data["Recipe"]].ID }}" class="q1">{{ data["Recipe"] }}</a></td>
-                {% else %}
-                <td align=left><a href="https://tbc.wowhead.com/item={{ allRecipes[data["Recipe"]].ID }}">{{ data["Recipe"] }}</a></td>
-                {% endif %}
+                <td align=left>
+                    <a href="https://wowhead.com/wotlk/spell={{ allRecipes[data["Recipe"]].ID }}" class="q1">{{ data["Recipe"] }}</a>
+                </td>
                 <td align=right>{{ data["Cost"] }}</td>
             </tr>
             {% endfor %}
@@ -55,7 +53,7 @@
             {% if reagents.items is defined %}
             {% for reagent, info in reagents.items() %}
             <tr>
-                <td><a href="https://tbc.wowhead.com/item={{ itemID[reagent] }}">{{ reagent }}</a></td>
+                <td><a href="https://wowhead.com/wotlk/item={{ itemID[reagent] }}">{{ reagent }}</a></td>
                 <td align="right">{{ info["Amount"] }}</td>
                 <td align="right">{{ info["PPU"] }}</td>
                 <td align="right">{{ info["Total"] }}</td>
@@ -76,7 +74,7 @@
             </tr>
             {% for recipe, info in recipesFromAH.items() %}
             <tr>
-                <td><a href="https://tbc.wowhead.com/item={{ recipesFromAH[recipe]["ID"] }}">{{ recipe }}</a></td>
+                <td><a href="https://wowhead.com/wotlk/item={{ recipesFromAH[recipe]["ID"] }}">{{ recipe }}</a></td>
                 <td align="right">{{ info["Price"] }}</td>
             </tr>
             {% endfor %}
@@ -91,7 +89,7 @@
             </tr>
             {% for recipe in recipesFromVendor %}
             <tr>
-                <td><a href="https://tbc.wowhead.com/item={{ recipesFromVendor[recipe] }}">{{ recipe }}</a></td>
+                <td><a href="https://wowhead.com/wotlk/item={{ recipesFromVendor[recipe] }}">{{ recipe }}</a></td>
             </tr>
             {% endfor %}
         </table>
@@ -105,7 +103,7 @@
             </tr>
             {% for recipe in recipesFromVendorLimited %}
             <tr>
-                <td><a href="https://tbc.wowhead.com/item={{ recipesFromVendorLimited[recipe] }}">{{ recipe }}</a></td>
+                <td><a href="https://wowhead.com/wotlk/item={{ recipesFromVendorLimited[recipe] }}">{{ recipe }}</a></td>
             </tr>
             {% endfor %}
         </table>
@@ -119,7 +117,7 @@
             </tr>
             {% for recipe in recipesFromQuest %}
             <tr>
-                <td><a href="https://tbc.wowhead.com/item={{ recipesFromQuest[recipe] }}">{{ recipe }}</a></td>
+                <td><a href="https://wowhead.com/wotlk/item={{ recipesFromQuest[recipe] }}">{{ recipe }}</a></td>
             </tr>
             {% endfor %}
         </table>
@@ -133,7 +131,7 @@
             </tr>
             {% for recipe in recipesFromReputation %}
             <tr>
-                <td><a href="https://tbc.wowhead.com/item={{ recipesFromReputation[recipe] }}">{{ recipe }}</a></td>
+                <td><a href="https://wowhead.com/wotlk/item={{ recipesFromReputation[recipe] }}">{{ recipe }}</a></td>
             </tr>
             {% endfor %}
         </table>
@@ -147,7 +145,7 @@
             </tr>
             {% for recipe in recipesFromSeasonal %}
             <tr>
-                <td><a href="https://tbc.wowhead.com/item={{ recipesFromSeasonal[recipe] }}">{{ recipe }}</a></td>
+                <td><a href="https://wowhead.com/wotlk/item={{ recipesFromSeasonal[recipe] }}">{{ recipe }}</a></td>
             </tr>
             {% endfor %}
         </table>

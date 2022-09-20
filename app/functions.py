@@ -18,10 +18,14 @@ def calculateSellToVendor(craftList, profession, server, faction):
         return 0
     elif profession == "Engineering":
         f = open("app/data/engineering.json", 'r')
+    elif profession == "Inscription":
+        f = open("app/data/inscription.json", 'r')
     elif profession == "Jewelcrafting":
         f = open("app/data/jewelcrafting.json", 'r')
     elif profession == "Leatherworking":
         f = open("app/data/leatherworking.json", 'r')
+    elif profession == "Mining":
+        f = open("app/data/mining.json", 'r')
     else:
         f = open("app/data/tailoring.json", 'r')
 
@@ -104,6 +108,10 @@ def getCheapestSkillingRecipe(recipes, recipePrices, currentSkill, enchantingRod
             candidate = "Runed Fel Iron Rod"
         elif currentSkill == 350:
             candidate = "Runed Adamantite Rod"
+        elif currentSkill == 375:
+            candidate = "Runed Eternium Rod"
+        elif currentSkill == 425:
+            candidate = "Runed Titanium Rod"
 
     return candidate
     
@@ -181,10 +189,14 @@ def importRecipes(profession, phase, targetSkill, recipeSources, faction, school
         f = open("app/data/enchanting.json", 'r')
     elif profession == "Engineering":
         f = open("app/data/engineering.json", 'r')
+    elif profession == "Inscription":
+        f = open("app/data/inscription.json", 'r')
     elif profession == "Jewelcrafting":
         f = open("app/data/jewelcrafting.json", 'r')
     elif profession == "Leatherworking":
         f = open("app/data/leatherworking.json", 'r')
+    elif profession == "Mining":
+        f = open("app/data/mining.json", 'r')
     else:
         f = open("app/data/tailoring.json", 'r')
 
