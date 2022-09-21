@@ -37,9 +37,9 @@ class UserInputForm(FlaskForm):
         validators=[InputRequired(),
                     NumberRange(min=1, max=374)])
     targetSkill = IntegerField(u'Target skill',
-        default=450,
+        default=375,
         validators=[InputRequired(),
-                    NumberRange(min=2, max=450)])
+                    NumberRange(min=2, max=375)])
     phase = SelectField(u'Phase',
         default='1',
         choices=[('1', '1'), ('2', '2'), ('3', '3'), ('4', '4'), ('5', '5')])
