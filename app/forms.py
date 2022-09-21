@@ -41,8 +41,8 @@ class UserInputForm(FlaskForm):
         validators=[InputRequired(),
                     NumberRange(min=2, max=375)])
     phase = SelectField(u'Phase',
-        default='1',
-        choices=[('1', '1'), ('2', '2'), ('3', '3'), ('4', '4'), ('5', '5')])
+        default='0',
+        choices=[('0', 'Pre-patch')])
     calculate = SubmitField('Calculate')
     includeVendor = BooleanField(u'Vendor', default="checked")
     includeVendorLimited = BooleanField(u'VendorLimited', default="checked")
