@@ -42,7 +42,7 @@ class UserInputForm(FlaskForm):
                     NumberRange(min=2, max=375)])
     phase = SelectField(u'Phase',
         default='0',
-        choices=[('0', 'Pre-patch')])
+        choices=[('0', 'Pre-patch'), ('1', '1')])
     calculate = SubmitField('Calculate')
     includeVendor = BooleanField(u'Vendor', default="checked")
     includeVendorLimited = BooleanField(u'VendorLimited', default="checked")
