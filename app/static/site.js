@@ -6,7 +6,7 @@ $( document ).ready(function() {
         $inputTo = $(".js-input-to"),
         instance,
         min = 1,
-        max = 375,
+        max = 450,
         from = $inputFrom.prop("value"),
         to = $inputTo.prop("value");
 

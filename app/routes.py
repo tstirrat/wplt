@@ -33,6 +33,7 @@ def index():
         session["targetSkill"] = form.targetSkill.data
         session["includeVendor"] = form.includeVendor.data
         session["includeVendorLimited"] = form.includeVendorLimited.data
+        session["includeDiscovery"] = form.includeDiscovery.data
         session["includeDrop"] = form.includeDrop.data
         session["includeQuest"] = form.includeQuest.data
         session["includeReputation"] = form.includeReputation.data
@@ -62,6 +63,7 @@ def results():
         form.targetSkill.data=session.get("targetSkill")
         form.includeVendor.data=session.get("includeVendor")
         form.includeVendorLimited.data=session.get("includeVendorLimited")
+        form.includeDiscovery.data=session.get("includeDiscovery")
         form.includeDrop.data=session.get("includeDrop")
         form.includeQuest.data=session.get("includeQuest")
         form.includeReputation.data=session.get("includeReputation")
@@ -78,6 +80,7 @@ def results():
         session.pop("targetSkill", None)
         session.pop("includeVendor", None)
         session.pop("includeVendorLimited", None)
+        session.pop("includeDiscovery", None)
         session.pop("includeDrop", None)
         session.pop("includeQuest", None)
         session.pop("includeReputation", None)
@@ -100,6 +103,7 @@ def results():
         session["targetSkill"] = form.targetSkill.data
         session["includeVendor"] = form.includeVendor.data
         session["includeVendorLimited"] = form.includeVendorLimited.data
+        session["includeDiscovery"] = form.includeDiscovery.data
         session["includeDrop"] = form.includeDrop.data
         session["includeQuest"] = form.includeQuest.data
         session["includeReputation"] = form.includeReputation.data
@@ -118,6 +122,7 @@ def results():
     # Collect required data
     recipeSources = {"Vendor": form.includeVendor.data,
                     "VendorLimited": form.includeVendorLimited.data,
+                    "Discovery": form.includeDiscovery.data,
                     "Drop": form.includeDrop.data,
                     "Quest": form.includeQuest.data,
                     "Reputation": form.includeReputation.data,

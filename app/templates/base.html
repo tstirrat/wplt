@@ -77,6 +77,10 @@
                         <div class="form-group col-md-8">
                             Include recipe sources
                             <div class="form-check form-check-inline">
+                                {{ form.includeDiscovery(class_="form-check-input") }}
+                                {{ form.includeDiscovery.label(class_="form-check-label") }}
+                            </div>
+                            <div class="form-check form-check-inline">
                                 {{ form.includeVendor(class_="form-check-input") }}
                                 {{ form.includeVendor.label(class_="form-check-label") }}
                             </div>
