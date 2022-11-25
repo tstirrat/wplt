@@ -25,15 +25,16 @@ for line in responseJson:
 
 class UserInputForm(FlaskForm):
     server = SelectField(u'Server',
-        default='noggenfogger',
+        default='old-blanchy',
         choices=[(slug, name) for slug, name in servers.items()])
     faction = SelectField(u'Faction',
-        default='horde',
+        default='alliance',
         choices=[('alliance', 'Alliance'), ('horde', "Horde")])
     profession = SelectField(u'Profession',
+        default='Inscription',
         choices=[(profession, profession) for profession in professions])
     startSkill = IntegerField(u'Starting skill',
-        default=1,
+        default=380,
         validators=[InputRequired(),
                     NumberRange(min=1, max=450)])
     targetSkill = IntegerField(u'Target skill',
@@ -45,6 +46,7 @@ class UserInputForm(FlaskForm):
         choices=[('1', '1')])
     calculate = SubmitField('Calculate')
     includeVendor = BooleanField(u'Vendor', default="checked")
+    includeCraftToken = BooleanField(u'CraftToken', default="checked")
     includeVendorLimited = BooleanField(u'VendorLimited', default="checked")
     includeDiscovery = BooleanField(u'Discovery', default="checked")
     includeDrop = BooleanField(u'Drop')

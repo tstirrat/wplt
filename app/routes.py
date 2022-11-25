@@ -32,6 +32,7 @@ def index():
         session["startSkill"] = form.startSkill.data
         session["targetSkill"] = form.targetSkill.data
         session["includeVendor"] = form.includeVendor.data
+        session["includeCraftToken"] = form.includeCraftToken.data
         session["includeVendorLimited"] = form.includeVendorLimited.data
         session["includeDiscovery"] = form.includeDiscovery.data
         session["includeDrop"] = form.includeDrop.data
@@ -62,6 +63,7 @@ def results():
         form.startSkill.data=session.get("startSkill")
         form.targetSkill.data=session.get("targetSkill")
         form.includeVendor.data=session.get("includeVendor")
+        form.includeCraftToken.data=session.get("includeCraftToken")
         form.includeVendorLimited.data=session.get("includeVendorLimited")
         form.includeDiscovery.data=session.get("includeDiscovery")
         form.includeDrop.data=session.get("includeDrop")
@@ -79,6 +81,7 @@ def results():
         session.pop("startSkill", None)
         session.pop("targetSkill", None)
         session.pop("includeVendor", None)
+        session.pop("includeCraftToken", None)
         session.pop("includeVendorLimited", None)
         session.pop("includeDiscovery", None)
         session.pop("includeDrop", None)
@@ -102,6 +105,7 @@ def results():
         session["startSkill"] = form.startSkill.data
         session["targetSkill"] = form.targetSkill.data
         session["includeVendor"] = form.includeVendor.data
+        session["includeCraftToken"] = form.includeCraftToken.data
         session["includeVendorLimited"] = form.includeVendorLimited.data
         session["includeDiscovery"] = form.includeDiscovery.data
         session["includeDrop"] = form.includeDrop.data
@@ -121,6 +125,7 @@ def results():
 
     # Collect required data
     recipeSources = {"Vendor": form.includeVendor.data,
+                    "CraftToken": form.includeCraftToken.data,
                     "VendorLimited": form.includeVendorLimited.data,
                     "Discovery": form.includeDiscovery.data,
                     "Drop": form.includeDrop.data,
